@@ -26,12 +26,19 @@ namespace AngularForm
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                 "~/Scripts/angular.js",
                 "~/Scripts/angular-cookies.js",
-                "~/Scripts/angular-sanitize.js"
+                "~/Scripts/angular-sanitize.js",
+                "~/Scripts/angular-validator.js",
+                "~/Scripts/angular-validator-rules.js"
                 ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new StyleBundle("~/Content/angular/css").Include(
+                 "~/Content/angular-csp.css",
+                 "~/Content/angular-ui.css"
+                ));
         }
     }
 }

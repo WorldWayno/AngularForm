@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/angular/css")
+    
+    @RenderSection("head", required: false)
+
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
