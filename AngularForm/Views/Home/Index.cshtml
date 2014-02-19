@@ -2,20 +2,38 @@
     ViewBag.Title = "Home Page";
 }
 @section head{
-    
-<link href="~/Content/angular-form-builder.css" rel="stylesheet" />
+
+    <link href="~/Content/angular-form-builder.css" rel="stylesheet" />
 }
-<div class="row" ng-controller="formBuilderController">
-    <div class="col-md-6">
-        <h2>Controls</h2>
-        <div fb-components></div>
+<section ng-controller="formBuilderController">
+    <div class="row text-center">
+        <pre ng-show="form.length">{{form}}</pre>
     </div>
-    <div class="col-md-6">
-        <h2>Form Builder</h2>
-        <div fb-builder="default" style="border: solid 1px #ccc; padding: 15px"></div>
+    <div class="row">
+        <div class="col-md-5">
+            <h2>Controls</h2>
+            <div fb-components></div>
+
+        </div>
+        <div class="col-md-5">
+            <h2>Form Builder</h2>
+            <div fb-builder="default" style="border: solid 1px #ccc; padding: 15px"></div>
+        </div>
     </div>
 
-</div>
+    <div class="row">
+        <h2>Preview</h2>
+        <form class="form-horizontal">
+            <div ng-model="input" fb-form="default" fb-default="defaultValue"></div>
+            <div class="form-group">
+                <div class="col-md-8 col-md-offset-4">
+                    <button type="submit" ng-click="submit()" class="btn btn-default">Save</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</section>
 @section scripts
 {
     <script src="~/Scripts/angular-form-builder.js"></script>
